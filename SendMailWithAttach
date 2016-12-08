@@ -1,0 +1,25 @@
+#Send email with attachment.
+
+import smtplib
+from os.path import basename
+from email.mime.application import MIMEApplication
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
+def send_mail(send_from, send_to, subject, text, file, server):
+    msg = MIMEMultipart()
+    msg["From"] = send_from
+    msg["To"] = send_to
+    msg["Subject"] = subject
+
+    msg.attach(MIMEText(text))
+
+    part = MIMEApplication(open(file, 'rb').read())
+    part.add_header('Content-Disposition','attachment',filename="foo.xlsx")
+
+    msg.attach(part)
+
+    smtp = smtplib.SMTP(server)
+    #smtp.login(send_from,send_pwd)
+    smtp.sendmail(send_from, send_to, msg.as_string())
+    smtp.close()
