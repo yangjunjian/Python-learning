@@ -1,0 +1,30 @@
+class Address:
+  des = r'E:\hello.txt'
+  def __init__(self,name,email,phone):
+    new = {'Name':name,'Email':email,'Phone':phone}
+    print 'Adding',name,'to address book!\n'
+    f = file(self.des,'a')
+    f.write(str(new)+'\n')
+    f.close()
+    print 'Done!\n'
+
+  def search(self):
+    flag = False
+    name = raw_input('Input the name: ')
+    f = file(self.des,'r')
+    while True:
+      line = f.readline()
+      if len(line) == 0:
+        break
+      if name in line:
+        flag = True
+        print 'INFO of',name,'is: ',line
+      if flag == False:
+        print 'Not found!'
+
+  def delete(self):
+    name = raw_input('Input the name: ')
+    lines = [l for l in file(self.des,'rt') if not name in l]
+    f = file(self.des,'w')
+    f.writelines(lines)
+    f.close()
