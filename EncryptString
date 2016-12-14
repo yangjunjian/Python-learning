@@ -1,0 +1,16 @@
+#Encrypt a string by moving a specified offset.
+
+a = 'abcxyz' #Original string
+b = 4        #Specified offset
+e = []
+ 
+def encry(x,y,z):
+  if ord(x)+y>122:
+    z = z.append(chr(ord(x)+y-26))
+  else:
+    z = z.append(chr(ord(x)+y))
+
+for c in a:
+  encry(c,b,e)
+
+print ''.join(e)
