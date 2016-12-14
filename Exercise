@@ -1,0 +1,46 @@
+#Encrypt a string by moving a specified offset.
+
+a = 'abcxyz' #Original string
+b = 4        #Specified offset
+e = []
+ 
+def encry(x,y,z):
+  if ord(x)+y>122:
+    z = z.append(chr(ord(x)+y-26))
+  else:
+    z = z.append(chr(ord(x)+y))
+
+for c in a:
+  encry(c,b,e)
+
+print ''.join(e)
+
+#Count the seconds between 2 given time.
+st = "00:00:12"
+et = "11:56:07"
+
+a = st.split(':')
+b = et.split(':')
+
+tl = [(int(b[i])-int(a[i])) for i in range(0,3)]
+print tl[0]*3600+tl[1]*60+tl[2]
+
+
+#判断是否存在指定长度的回文字。
+a = 'abcdeyzzy'
+n = 4
+flag = False
+
+if n <= len(a):
+  for i in range(0,len(a)-n+1):
+    x = list(a[i:i+n])
+    y = list(a[i:i+n])
+    y.reverse()
+    if x == y:
+      flag = True
+  if flag == True:
+    print 'YES',a[i:i+n]
+  else:
+    print 'NO'
+else:
+  print 'Wrong!'
