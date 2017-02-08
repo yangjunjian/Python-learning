@@ -11,24 +11,26 @@ ctime = time.strftime('%H%M%S')
 
 target_dir = r'\\192.168.4.11\Share\CentrifyQA_Cloud\Jason.Yang\\'+cdate
 
-if not os.path.exists(target_dir):
-  print 'Folder',cdate,'does not exist. Will create one.'
+if os.path.exists(target_dir) == False:
+  print ('Folder does not exist. Will create it.')
   os.mkdir(target_dir)
-  print 'Folder',cdate,'is created!'
+  print ('Folder is created!')
 
-name = raw_input('Please input compressed file name: ')
+name = input('Name the file or click ENTER to use default name: ')
 
 if len(name) == 0:
-  print 'Use default name as no name is specified.'
-  target = target_dir+os.sep+ctime+'.zip'
-else:
-  target = target_dir+os.sep+ctime+'_'+name.replace(' ','_')+'.zip'
+  print ('Use default name(current time)')
+  name = ctime
 
-ziptuple = r'C:\7z\7za.exe','a -tzip',target,source
+target = target_dir+os.sep+name+'.zip'
 
-zipcommand = ' '.join(ziptuple)
+print (target)
+
+zipcommand = ' '.join([r'C:\7z\7za.exe','a -tzip',target,source])
+
+print (zipcommand)
 
 if os.system(zipcommand) == 0:
-  print 'Successfully back up to',target
+  print ('Backup done!')
 else:
-  print 'Backup failed'
+  print ('Backup failed!')
