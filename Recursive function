@@ -1,0 +1,19 @@
+#This is how to implement Fibonacci via recursive function and cyclical function.
+#For big number after many recursive, the program will throw exception. Cyclical function won't.
+
+def fb(n):
+  l = []
+  for i in range(1,n+1):
+    if i in (1,2):
+      l.append(1)
+    else:
+      l.append(l[i-2]+l[i-3])
+    
+  return l[i-1]
+
+
+def fb(n):
+  if n in (1,2):
+    return 1
+  else:
+    return fb(n-1)+fb(n-2)
