@@ -9,7 +9,28 @@ def move(n,a,b,c):
     print (a,'-->',c)
     move(n-1,b,a,c)
     return
+    
+#甲子纪年
+tg = list('甲乙丙丁戊己庚辛壬癸')
+dz = list('子丑寅卯辰巳午未申酉戌亥')
+jz = []
 
+i = 0
+j = 0
+
+while True:
+  jz.append(tg[i]+dz[j])
+  if i == len(tg) - 1 and j != len(dz) - 1:
+    i = 0
+  else:
+    i += 1
+  if j == len(dz) - 1 and i != len(tg) - 1:
+    j = 0
+  else:
+    j += 1
+  if i == len(tg) - 1 and j == len(dz) - 1:
+    jz.append(tg[i]+dz[j])
+    break
 
 #This is how to implement Fibonacci via recursive function and cyclical function.
 #For big number after many recursive, the program will throw exception. Cyclical function won't.
