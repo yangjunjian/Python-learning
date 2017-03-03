@@ -53,8 +53,8 @@ def fb(n):
     
 #通过前面元素推导下一元素
 def fib(n):
-  z,a,b = 0,0,1
-  while z < n:
-    print (b)
-    a,b = b,a+b
+  z,a,b = 0,0,1  #定义第一个元素b = 1. 其前面一个值为0（确保下一值为1）
+  while z < n:   
+    print (b)    
+    a,b = b,a+b  #交换值，前一个值用后一个值取代；后一个值用前两值之和
     z += 1
