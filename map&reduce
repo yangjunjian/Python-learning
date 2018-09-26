@@ -8,9 +8,23 @@ def str2int(s):
         return 10*x+y
     return reduce(add,map(char2num,s))
     
+# 使用map, reduce实现str2float:
+def str2flt(s):
+    if '.' in s:
+        i = s.index('.')
+        decnumber = len(s) - i - 1
+    st = s[:i]+s[i+1:]
+    def fn(x,y):
+        return 10*x+y
+    def char2num(c):
+        digits = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
+        return digits[c]
+    return reduce(fn,map(char2num,st))/pow(10,decnumber)
+    
 #使用map将列表首字符大写，其余小写：
 def cptl(L):
     def cpt(s):
         st = s[0].upper()+s[1:].lower()
         return st
     return list(map(cpt,L))
+
