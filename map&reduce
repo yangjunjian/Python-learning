@@ -1,0 +1,16 @@
+# 使用map, reduce实现str2int:
+from functools import reduce
+def str2int(s):
+    digits = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
+    def char2num(c):
+        return digits[c]
+    def add(x,y):
+        return 10*x+y
+    return reduce(add,map(char2num,s))
+    
+#使用map将列表首字符大写，其余小写：
+def cptl(L):
+    def cpt(s):
+        st = s[0].upper()+s[1:].lower()
+        return st
+    return list(map(cpt,L))
