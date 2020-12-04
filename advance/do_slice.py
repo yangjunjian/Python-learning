@@ -10,20 +10,10 @@ print('L[0:3] =',L[0:3])
 print('L[:3] =',L[:3])
 #取后3位
 print('L[-3:] =',L[-3:])
-#每三个取一个
+#隔三个取一个
 print('L[::3] =',L[::3])
 
 #使用切片实现strip()函数
-def trim(s):
-    while True:
-        if s[:1] == ' ':
-            s = s[1:]
-        if s[-1:] == ' ':
-            s = s[:-1]
-        if s == '' or s[:1] != ' ' and s[-1:] != ' ':
-            break
-    return s
-
 def trim(s):
     try:
         if len(s) > 0:
@@ -32,7 +22,7 @@ def trim(s):
             while s[-1:] == ' ':
                 s = s[:-1]
         return s
-    except TypeError:
+    except:
         print('Input syntax error!')
 print(trim([1,2,3]))
 print(trim(''))
