@@ -23,6 +23,17 @@ def trim(s):
         if s == '' or s[:1] != ' ' and s[-1:] != ' ':
             break
     return s
+
+def trim(s):
+    try:
+        if len(s) > 0:
+            while s[:1] == ' ':
+                s = s[1:]
+            while s[-1:] == ' ':
+                s = s[:-1]
+        return s
+    except TypeError:
+        print('Input syntax error!')
 print(trim([1,2,3]))
 print(trim(''))
 print(trim('    '))
