@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# _*_ coding: utf-8 _*_
+# -*- coding: utf-8 -*-
 
 s = (x * x for x in range(5))
 print(s)
