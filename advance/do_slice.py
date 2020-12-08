@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# _*_ coding:utf-8 _*_
+# -*- coding: utf-8 -*-
 
 L = ['Michael', 'Sarah', 'Tracy', 'Bob', 'Jack']
 #复制整个列表
