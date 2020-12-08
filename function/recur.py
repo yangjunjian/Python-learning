@@ -1,5 +1,5 @@
 #! /usr/bin/env python3
-# _*_ coding: utf-8 _*_
+# -*- coding: utf-8 -*-
 
 # 利用递归函数计算阶乘
 # N! = 1 * 2 * 3 * ... * N
