@@ -32,7 +32,7 @@ def is_reversible(n):
     n_to_l = list(str(n))
     n_to_l.reverse()
     n_reversed = int(''.join(n_to_l))
-    if n == n_reversed:
+    if n == n_reversed: #   n == int(str(n)[::-1]) 通过字符串的切片功能进行逆序排列
         return True
 
 
