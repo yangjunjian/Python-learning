@@ -5,6 +5,7 @@
 import functools
 
 
+#   装饰器不接收参数
 def log(func):
     @functools.wraps(func)
     def wrapper(*args, **kw):
@@ -21,7 +22,7 @@ def now():
 log(now)()
 print(now.__name__)
 
-
+#   装饰器接收参数
 def log(text):
     def decorator(func):
         @functools.wraps(func)
@@ -42,8 +43,6 @@ print(now.__name__)
 
 
 #   打印程序运行时间（或者在程序运行前后打印log）：日志需在wrapper函数内部打印
-
-
 def metric(fn):
     @functools.wraps(fn)
     def wrapper(*args, **kw):
@@ -71,6 +70,7 @@ def sum():
 metric(sum)()
 
 
+#   装饰器是否传递参数皆可
 def log(param):
     if callable(param):
         @functools.wraps(param)
