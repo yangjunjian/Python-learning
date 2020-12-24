@@ -10,7 +10,7 @@ class Student(object):
         self.name = name
         self.score = score
 
-    def _get_grade(self):
+    def get_grade(self):
         if self.score >= 90:
             return 'A'
         elif self.score >= 75:
@@ -21,7 +21,7 @@ class Student(object):
             return 'D'
 
     def print_score(self):
-        print('%s: %s - %s' % (self.name, self.score, self._get_grade()))
+        print('%s: %s - %s' % (self.name, self.score, self.get_grade()))
 
 
 jason = Student('Jason', 90)
