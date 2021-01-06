@@ -18,3 +18,14 @@ L3 = [('Bob', 75), ('Adam', 92), ('Bart', 66), ('Lisa', 88)]
 print(sorted(L3))
 print(sorted(L3, key=itemgetter(1)))
 print(sorted(L3, key=itemgetter(1), reverse=True))
+
+
+x = [
+    {"语文": 80, "数学": 90, "英语": 70, "物理": 92, "化学": 83},
+    {"语文": 82, "数学": 70, "英语": 78, "物理": 90, "化学": 80},
+    {"语文": 86, "数学": 89, "英语": 73, "物理": 67, "化学": 88},
+    {"语文": 76, "数学": 86, "英语": 60, "物理": 82, "化学": 79}
+]
+
+print(sorted(x, key=lambda x: x["物理"]))
+print(sorted(x, key=itemgetter('语文')))
