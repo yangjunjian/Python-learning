@@ -24,4 +24,4 @@ except AttributeError as e:
 
 g = GraduateStudent()
 g.score = 100
-print('g.score =',g.score)
+print('g.score =', g.score)
