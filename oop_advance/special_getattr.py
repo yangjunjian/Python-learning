@@ -14,11 +14,12 @@ class Student(object):
             return 99
         if attr == 'age':
             return lambda: 25
-        raise AttributeError('Student object has no attribute: %s' % attr)
+        raise AttributeError('\'Student\' object has no attribute \'%s\'' % attr)
 
 
 s = Student('Jason Yang')
 print(s.name)
 print(s.score)
 print(s.age())
+#   AttributeError: 'Student' object has no attribute 'grade'
 print(s.grade)
