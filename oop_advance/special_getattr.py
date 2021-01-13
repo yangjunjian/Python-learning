@@ -13,7 +13,8 @@ class Student(object):
         if attr == 'score':
             return 99
         if attr == 'age':
-            return lambda: 25
+            #    返回函数时，变量即为调用时的参数
+            return lambda x: x
         raise AttributeError('\'Student\' object has no attribute \'%s\'' % attr)
 
 
