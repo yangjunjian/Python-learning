@@ -1,0 +1,39 @@
+#! /usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""a test script of enum"""
+__author__ = 'Jason Yang'
+
+from enum import Enum, unique
+
+Month = Enum('Month', ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'))
+
+for name, member in Month.__members__.items():
+    print(name, '=>', member, ',', member.value)
+
+print(Month['Jan'])
+print(Month(1))
+
+
+@unique
+class Weekday(Enum):
+    Sun = 7
+    Mon = 1
+    Tue = 2
+    Wed = 3
+    Thu = 4
+    Fri = 5
+    Sat = 6
+
+
+for xx in Weekday.__members__:
+    print(xx)
+for yy in Weekday.__members__.items():
+    print(yy)
+for a, b in Weekday.__members__.items():
+    print(a, '=>', b, ',', b.value)
+
+print(Weekday.Mon)
+print(Weekday['Mon'])
+print(Weekday['Mon'].value)
+print(Weekday(1))
