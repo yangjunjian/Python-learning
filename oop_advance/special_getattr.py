@@ -9,6 +9,7 @@ class Student(object):
     def __init__(self, name):
         self.name = name
 
+    #   访问类的指定属性时，根据__getattr__方法返回
     def __getattr__(self, attr):
         if attr == 'score':
             return 99
@@ -21,7 +22,7 @@ class Student(object):
 s = Student('Jason Yang')
 print(s.name)
 print(s.score)
-print(s.age())
+print(s.age(6))
 #   AttributeError: 'Student' object has no attribute 'grade'
 print(s.grade)
 
