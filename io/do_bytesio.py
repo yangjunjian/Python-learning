@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""a test script of StringIO"""
+"""a test script of BytesIO"""
 __author__ = 'Jason Yang'
 
 from io import BytesIO
@@ -21,4 +21,4 @@ while True:
     s = f.readline()
     if s == b'':
         break
-    print(s)
+    print(s.strip().decode('utf-8'))
