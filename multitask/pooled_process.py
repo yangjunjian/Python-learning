@@ -13,7 +13,7 @@ def long_time_proc(name):
     start = time.time()
     time.sleep(random.random() * 3)
     end = time.time()
-    print('Task %s runs in %.2f seconds.' % (name, os.getpid()))
+    print('Task %s runs in %.2f seconds.' % (name, (end - start)))
 
 
 if __name__ == '__main__':
